@@ -1,0 +1,16 @@
+{
+  "name": "<%- projectName %>",
+  "version": "1.0.0",
+  "description": "<%- projectDescription %>",
+  "author": "<%- blogAuthor %>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2"
+  },
+  "scripts":{
+    "start": "node_modules/gulp-cli/bin/gulp.js"
+  }
+}

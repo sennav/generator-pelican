@@ -1,9 +1,16 @@
-# generator-pelican [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Generate a Pelican Blog
+# generator-pelican
+
+Pelican generator is a different way to set up a Pelican blog.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-pelican using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First you'll need pelican:
+
+```bash
+pip install pelican markdown
+```
+
+You'll also need [Yeoman](http://yeoman.io) and generator-pelican both installed with [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -13,24 +20,24 @@ npm install -g generator-pelican
 Then generate your new project:
 
 ```bash
+mkdir my awesome-blog
+cd awesome-blog
 yo pelican
 ```
 
-## Getting To Know Yeoman
+## View your blog
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+Just run `npm start` and let the magic begin! Write or alter anything on your content folder and the magic will happen again :)
 
-## License
+## Bootstrap a new post
 
-Apache-2.0 © [Vinicius Senna](https://sennav.com)
+Just run `yo pelican:post` and look for a file with the same name as the chosen slug.
 
+## Future work
 
-[npm-image]: https://badge.fury.io/js/generator-pelican.svg
-[npm-url]: https://npmjs.org/package/generator-pelican
-[travis-image]: https://travis-ci.org/sennav/generator-pelican.svg?branch=master
-[travis-url]: https://travis-ci.org/sennav/generator-pelican
-[daviddm-image]: https://david-dm.org/sennav/generator-pelican.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/sennav/generator-pelican
+* Tests
+* Input check
+* Initialize git repository
+* Many others
+
+Feel free to contribute!
