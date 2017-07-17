@@ -20,7 +20,7 @@ npm install -g generator-pelican
 Then generate your new project:
 
 ```bash
-mkdir my awesome-blog
+mkdir awesome-blog
 cd awesome-blog
 yo pelican
 ```
