@@ -6,8 +6,8 @@ var path = require('path');
 var moment = require('moment-timezone');
 var fs = require('fs');
 
-module.exports = Generator.extend({
-  prompting: function () {
+module.exports = class extends Generator {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the awesome ' + chalk.red('generator-pelican') + ' generator!'
@@ -38,11 +38,11 @@ module.exports = Generator.extend({
       this.props = props;
       this.props.timezone = moment.tz.guess() || 'America/New_York';
       this.props.postTimestamp = moment().format("YYYY-MM-DD HH:mm:ss");
-      this.props.language = process.env.LANG.substring(0,2) || 'en';
+      this.props.language = 'en';
     }.bind(this));
-  },
+  };
 
-  writing: function () {
+  writing() {
     var contentFolder = "content";
     fs.existsSync(contentFolder) || fs.mkdirSync(contentFolder);
     this.fs.copyTpl(
@@ -55,9 +55,9 @@ module.exports = Generator.extend({
       this.destinationPath('content'),
       this.props
     );
-  },
+  };
 
-  install: function () {
+  install() {
     this.installDependencies({
         npm: true,
         bower: false,
@@ -65,6 +65,5 @@ module.exports = Generator.extend({
           console.log('Fly pelican, fly!');
       }
     });
-  }
-});
-
+  };
+}

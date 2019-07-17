@@ -4,8 +4,8 @@ var yosay = require('yosay');
 var path = require('path');
 var moment = require('moment');
 
-module.exports = Generator.extend({
-  prompting: function () {
+module.exports = class extends Generator{
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
       'Let\'s write a new post!'
@@ -34,14 +34,14 @@ module.exports = Generator.extend({
       this.props = props;
       this.props.postTimestamp = moment().format("YYYY-MM-DD HH:mm:ss");
     }.bind(this));
-  },
+  };
 
-  writing: function () {
+  writing() {
     this.fs.copyTpl(
       this.templatePath('new_post.md'),
       this.destinationPath('content/'+this.props.postSlug+'.md'),
       this.props
     );
-  }
-});
+  };
+};
 
